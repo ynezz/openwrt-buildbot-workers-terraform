@@ -1,0 +1,21 @@
+#cloud-config
+apt:
+  sources:
+    docker.list:
+      source: deb [arch=amd64] https://download.docker.com/linux/debian $RELEASE stable
+      keyid: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+
+packages:
+  - docker-ce
+  - docker-ce-cli
+
+package_update: true
+package_upgrade: true
+
+runcmd:
+  - mkdir -p /builder/dl
+  - curl https://foo.true.cz/dump/mc > /bin/mcli && chmod +x /bin/mcli
+  - mcli alias set foo https://foo.true.cz ${minio_access_key} ${minio_secret_key}
+  - mcli cp --recursive foo/openwrt/downloads/ /builder/dl/
+  - chown -R 101.102 /builder/dl
+  - docker run --detach --rm --name ${name} --volume /builder:/builder --env BUILDSLAVE_MASTER='${master}' --env BUILDSLAVE_NAME=${name} --env BUILDSLAVE_PASSWORD='${password}' ${image}
