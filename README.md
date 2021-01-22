@@ -26,7 +26,7 @@ Note, that Hetzner limits you to 10 VPSes (every cloud provider does that) and y
 | master | packages | 31 | 4 hours | 0.045€ | 5.58€ |
 | openwrt-19.07 | packages | 31 | 4 hours | 0.045€ | 5.58€ |
 
-So the complete rebuild of master and one stable release takes approximately 6 hours and costs 17.37€.
+So the complete rebuild of master and one stable release takes approximately 6 hours with 70 buildbot workers and costs 17.37€.
 
 ## Configuration
 
