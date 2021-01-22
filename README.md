@@ -3,7 +3,7 @@ OpenWrt buildbot workers managed by Terraform
 
 ## About
 
-As you might know, [multiple flaws (7 CVEs)](https://openwrt.org/advisory/2021-01-19-1) has been found in the dnsmasq package and they looked quite serious, so we've decided to provide update ASAP. We've used Terraform based dynamic wokers to speed up the release process this time.
+As you might know, [multiple flaws (7 CVEs)](https://openwrt.org/advisory/2021-01-19-1) has been found in the dnsmasq package and they looked quite serious, so we've decided to provide update ASAP to our users. We've used Terraform based dynamic wokers to speed up the release process this time.
 
 The patched version of dnsmasq has been released at 13:00, [mitigations](https://forum.openwrt.org/t/security-advisory-2021-01-19-1-dnsmasq-multiple-vulnerabilities/85903/41) with [security advisory](https://openwrt.org/advisory/2021-01-19-1) provided at 13:45. We have made fixed firmware images available for development and 19.07 stable release around 14:30, all packages around 18.00 and finally relased fixed [19.07.6 release](https://lists.infradead.org/pipermail/openwrt-announce/2021-January/000010.html) at 23:56. Please note, that it usually takes several days to build and publish release.
 
